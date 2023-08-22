@@ -1,6 +1,7 @@
-import { TextField, Button, Stack } from "@mui/material";
+import { Typography, TextField, Button, Stack } from "@mui/material";
 import { useForm } from "react-hook-form";
 import { DevTool } from "@hookform/devtools";
+import { Link } from "react-router-dom";
 
 type FORMDATA = {
   firstName: string;
@@ -25,11 +26,11 @@ const SignUp: React.FC = () => {
 
   const { register, handleSubmit, control, formState } = form;
   const { errors } = formState;
-  // let passConformation = "";
+
   const onSubmit = (data: FORMDATA) => {
     console.log("signUp form data", data);
     if (data.password !== data.conformPassword) {
-      alert("password not match")
+      alert("password not match");
     }
   };
 
@@ -101,10 +102,13 @@ const SignUp: React.FC = () => {
               },
             })}
             error={!errors}
-            helperText={errors.conformPassword?.message }
+            helperText={errors.conformPassword?.message}
           />
+          <Typography className="text-blue-500">
+            if you have already SignUp ?<Link className="hover:text-blue-700" to={"/login"}>Login</Link>
+          </Typography>
 
-          <Button type="submit">Signup</Button>
+          <Button className="bg-blue-500 hover:bg-blue-500 text-white" type="submit">Signup</Button>
         </Stack>
       </form>
       <DevTool control={control} />

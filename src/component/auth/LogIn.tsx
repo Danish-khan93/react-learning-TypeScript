@@ -46,7 +46,7 @@ const SignUp = () => {
           helperText={errors.password?.message}
         />
 
-        <Button>Signup</Button>
+<Button className="bg-blue-500 hover:bg-blue-500 text-white" type="submit">Login</Button>
       </Stack>
     </form>
   );
