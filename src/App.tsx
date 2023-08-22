@@ -9,6 +9,7 @@ const App = () => {
       <SignUp/>
       <LogIn/>
       <Footer/>
+      <div>hahha</div>
     </div>
   )
 }
