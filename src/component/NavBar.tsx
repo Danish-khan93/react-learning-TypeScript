@@ -1,5 +1,5 @@
 import { AppBar, Toolbar, Typography, Box, Divider } from "@mui/material";
-
+import { Link } from "react-router-dom";
 const NavBar = () => {
   return (
     <AppBar position="static">
@@ -8,10 +8,16 @@ const NavBar = () => {
           <Typography variant="h4">Logo</Typography>
         </Box>
         <Box className="flex justify-between gap-5">
-          <Typography>Catagory</Typography>
-          <Divider orientation="vertical" />
-          <Typography>Signup</Typography>
-          <Typography>Login</Typography>
+          <Typography>
+            <Link to="/">Catagory</Link>
+          </Typography>
+          <Divider orientation="vertical" className="bg-white" />
+          <Typography>
+            <Link to="/signup">Signup</Link>
+          </Typography>
+          <Typography>
+            <Link to="/login">Login</Link>
+          </Typography>
           <Typography>Logout</Typography>
           <Divider orientation="vertical" />
         </Box>

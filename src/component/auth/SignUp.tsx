@@ -25,11 +25,11 @@ const SignUp: React.FC = () => {
 
   const { register, handleSubmit, control, formState } = form;
   const { errors } = formState;
-  let passConformation = "";
+  // let passConformation = "";
   const onSubmit = (data: FORMDATA) => {
     console.log("signUp form data", data);
     if (data.password !== data.conformPassword) {
-      passConformation = "password is not match";
+      alert("password not match")
     }
   };
 
@@ -101,7 +101,7 @@ const SignUp: React.FC = () => {
               },
             })}
             error={!errors}
-            helperText={errors.conformPassword?.message || passConformation}
+            helperText={errors.conformPassword?.message }
           />
 
           <Button type="submit">Signup</Button>
